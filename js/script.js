@@ -101,6 +101,9 @@ function addTodo(event) {
   console.log(todoDiv);
 }
 
+
+
+
 function deleteCheck(e) {
   const item = e.target;
   if (item.classList[0] === "deleteBtn") {
