@@ -35,6 +35,7 @@ window.addEventListener("click", (event) => {
 
 /*----------Form----------*/
 //variables
+const typeInput = document.querySelector(".typeInput");
 const taskInput = document.querySelector(".taskInput");
 const dueInput = document.querySelector(".dueInput");
 const todoButton = document.querySelector(".todoBtn");
@@ -53,6 +54,26 @@ function addTodo(event) {
   //todo div
   const todoDiv = document.createElement("div");
   todoDiv.classList.add("todo");
+
+  // const typeTodo = document.createElement("li");
+  // typeTodo.innerText = typeInput.value;
+  // typeTodo.classList.add("todoType");
+  // todoDiv.appendChild(typeTodo);
+  // if (typeInput.value === "") {
+  //   return null;
+  // }
+
+  const typeTodo = document.createElement("li");
+  if (typeInput.value === "business") {
+    typeTodo.innerHTML = '<i class="fas fa-briefcase"></i>';
+  } else if (typeInput.value === "personal") {
+    typeTodo.innerHTML = '<i class="fas fa-tv"></i>';
+  }
+  typeTodo.classList.add("todoType");
+  todoDiv.appendChild(typeTodo);
+  if (typeInput.value === "") {
+    return null;
+  }
 
   //task name li
   const taskTodo = document.createElement("li");
@@ -95,14 +116,13 @@ function addTodo(event) {
   todoList.appendChild(todoDiv);
 
   //Clear input values
+  typeInput.value = "Choose task type";
   taskInput.value = "";
   dueInput.value = "";
 
-  console.log(todoDiv);
+  document.getElementById("completeDisplay").innerHTML =
+    todoList.childElementCount;
 }
-
-
-
 
 function deleteCheck(e) {
   const item = e.target;
