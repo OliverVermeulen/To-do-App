@@ -96,6 +96,35 @@ function addTodo(event) {
 }
 
 //check, edit and delete function
+// function deleteCheck(e) {
+//   const item = e.target;
+//   //delete item
+//   if (item.classList[0] === "deleteBtn") {
+//     const todo = item.parentElement;
+//     //delete animation
+//     todo.classList.add("fall");
+//     todo.addEventListener("transitionend", function () {
+//       todo.remove();
+//     });
+//   }
+
+//   //check item off
+//   if (item.classList[0] === "completeBtn") {
+//     const todo = item.parentElement;
+//     todo.classList.toggle("completedItem");
+//   }
+
+//   //edit existing item
+//   if (item.classList[0] === "editBtn") {
+//     const todo = item.parentElement;
+//     todo.classList.add("fall");
+//     todo.addEventListener("transitionend", function () {
+//       todo.remove();
+//     });
+//     modal.style.display = "block";
+//   }
+// }
+
 function deleteCheck(e) {
   const item = e.target;
   //delete item
@@ -106,16 +135,10 @@ function deleteCheck(e) {
     todo.addEventListener("transitionend", function () {
       todo.remove();
     });
-  }
-
-  //check item off
-  if (item.classList[0] === "completeBtn") {
+  } else if (item.classList[0] === "completeBtn") {
     const todo = item.parentElement;
     todo.classList.toggle("completedItem");
-  }
-
-  //edit existing item
-  if (item.classList[0] === "editBtn") {
+  } else if (item.classList[0] === "editBtn") {
     const todo = item.parentElement;
     todo.classList.add("fall");
     todo.addEventListener("transitionend", function () {
