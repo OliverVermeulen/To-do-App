@@ -28,7 +28,7 @@
               <option class="type-select" value="all">All</option>
               <option class="type-select" value="completed">Completed</option>
               <option class="type-select" value="uncompleted">Uncompleted</option>
-              <option class="type-select" value="alphabetize">Alphabetize</option>
+              <option class="type-select" value="alphabetize" onclick="sortList()">Alphabetize</option>
             </select>
           </div>
         </inbox>
@@ -67,7 +67,7 @@
 
                 <label for="dueInput" class="form-label">Date and time:</label>
                 <input type="datetime-local" class="dueInput" max="2030-12-31T23:59" required />
-                <button class="todoBtn" type="submit">Submit</button>
+                <button id="btnCounter" class="todoBtn" type="submit">Submit</button>
               </form>
             </div>
           </modal>

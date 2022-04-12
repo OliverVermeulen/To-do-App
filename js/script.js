@@ -1,11 +1,13 @@
 /*----------Header date----------*/
 const CURRENT_DATE = new Date();
 const DAY = CURRENT_DATE.getDate();
-const PADDED_DAY = DAY.toString().padStart(2, '0')
+const PADDED_DAY = DAY.toString().padStart(2, "0");
 const MONTH_AS_NUMBER = CURRENT_DATE.getMonth() + 1;
-const PADDED_MONTH = MONTH_AS_NUMBER.toString().padStart(2, '0')
+const PADDED_MONTH = MONTH_AS_NUMBER.toString().padStart(2, "0");
 const YEAR = CURRENT_DATE.getFullYear();
-document.querySelector("#date").innerHTML = `${PADDED_DAY}/${PADDED_MONTH}/${YEAR}`;
+document.querySelector(
+  "#date"
+).innerHTML = `${PADDED_DAY}/${PADDED_MONTH}/${YEAR}`;
 
 /*----------Modal----------*/
 //variables
@@ -55,7 +57,7 @@ function addTodo(event) {
   //task name li
   const taskTodo = document.createElement("li");
   taskTodo.innerText = taskInput.value;
-  taskTodo.classList.add("todoItem");
+  taskTodo.classList.add("todoName");
   todoDiv.appendChild(taskTodo);
   if (taskInput.value === "") {
     return null;
@@ -64,7 +66,7 @@ function addTodo(event) {
   //due date and time li
   const dueTodo = document.createElement("li");
   dueTodo.innerText = dueInput.value;
-  dueTodo.classList.add("todoItem");
+  dueTodo.classList.add("todoDate");
   todoDiv.appendChild(dueTodo);
   if (dueInput.value === "") {
     return null;
@@ -95,25 +97,36 @@ function addTodo(event) {
   //Clear input values
   taskInput.value = "";
   dueInput.value = "";
+
+  console.log(todoDiv);
 }
+
+// let btnCounter = document.querySelector("#btnCounter");
+// let counter = 0;
+
+// btnCounter.addEventListener("click", function () {
+//   counter++;
+//   console.log(counter);
+// });
 
 function deleteCheck(e) {
   const item = e.target;
-  //delete item
   if (item.classList[0] === "deleteBtn") {
+    //delete item
     const todo = item.parentElement;
-    //delete animation
-    todo.classList.add("fall");
+    todo.classList.add("fall"); //delete animation
     todo.addEventListener("transitionend", function () {
       todo.remove();
     });
   } else if (item.classList[0] === "completeBtn") {
+    //check item
     const todo = item.parentElement;
     todo.classList.toggle("completedItem");
   } else if (item.classList[0] === "editBtn") {
     const todo = item.parentElement;
     todo.classList.add("fall");
     todo.addEventListener("transitionend", function () {
+      //edit item
       todo.remove();
     });
     modal.style.display = "block";
@@ -141,9 +154,6 @@ function filterTodo(e) {
         } else {
           todos[i].style.display = "none";
         }
-        break;
-      case "alphabetize":
-        todos[i].style.display = "flex";
         break;
     }
   }
