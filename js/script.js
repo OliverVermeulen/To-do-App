@@ -24,12 +24,14 @@ btn.addEventListener("click", () => {
 //close modal function
 span.addEventListener("click", () => {
   modal.style.display = "none";
+  document.querySelector("#inputForm").reset()
 });
 
 //window close modal function
 window.addEventListener("click", (event) => {
   if (event.target == modal) {
     modal.style.display = "none";
+    document.querySelector("#inputForm").reset()
   }
 });
 
@@ -116,7 +118,7 @@ function addTodo(event) {
   todoList.appendChild(todoDiv);
 
   //Clear input values
-  typeInput.value = "Choose task type";
+  typeInput.value = "";
   taskInput.value = "";
   dueInput.value = "";
 
