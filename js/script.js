@@ -1,15 +1,15 @@
 /*----------Header date----------*/
-n = new Date();
-d = n.getDate();
-m = n.getMonth() + 1;
-y = n.getFullYear();
-document.getElementById("date").innerHTML = d + "/" + m + "/" + y;
+const CURRENT_DATE = new Date();
+const DAY = CURRENT_DATE.getDate();
+const MONTH_AS_NUMBER = CURRENT_DATE.getMonth() + 1;
+const YEAR = CURRENT_DATE.getFullYear();
+document.getElementById("date").innerHTML = DAY + "/" + MONTH_AS_NUMBER + "/" + YEAR;
 
 /*----------Modal----------*/
 //variables
-let modal = document.getElementById("myModal");
-let btn = document.querySelector(".myBtn");
-let span = document.getElementsByClassName("close")[0];
+const modal = document.querySelector("#myModal");
+const btn = document.querySelector(".myBtn");
+const span = document.querySelector(".close");
 
 //functions
 //display modal function
