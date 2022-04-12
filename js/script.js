@@ -3,7 +3,7 @@ const CURRENT_DATE = new Date();
 const DAY = CURRENT_DATE.getDate();
 const MONTH_AS_NUMBER = CURRENT_DATE.getMonth() + 1;
 const YEAR = CURRENT_DATE.getFullYear();
-document.getElementById("date").innerHTML = DAY + "/" + MONTH_AS_NUMBER + "/" + YEAR;
+document.querySelector("#date").innerHTML = `${DAY}/${MONTH_AS_NUMBER}/${YEAR}`
 
 /*----------Modal----------*/
 //variables
@@ -13,14 +13,14 @@ const span = document.querySelector(".close");
 
 //functions
 //display modal function
-btn.onclick = function () {
+btn.addEventListener('click', () => {
   modal.style.display = "block";
-};
+})
 
 //close modal function
-span.onclick = function () {
+span.addEventListener('click', () => {
   modal.style.display = "none";
-};
+})
 
 //window close modal function
 window.onclick = function (event) {
