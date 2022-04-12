@@ -24,14 +24,14 @@ btn.addEventListener("click", () => {
 //close modal function
 span.addEventListener("click", () => {
   modal.style.display = "none";
-  document.querySelector("#inputForm").reset()
+  document.querySelector("#inputForm").reset();
 });
 
 //window close modal function
 window.addEventListener("click", (event) => {
   if (event.target == modal) {
     modal.style.display = "none";
-    document.querySelector("#inputForm").reset()
+    document.querySelector("#inputForm").reset();
   }
 });
 
@@ -57,17 +57,10 @@ function addTodo(event) {
   const todoDiv = document.createElement("div");
   todoDiv.classList.add("todo");
 
-  // const typeTodo = document.createElement("li");
-  // typeTodo.innerText = typeInput.value;
-  // typeTodo.classList.add("todoType");
-  // todoDiv.appendChild(typeTodo);
-  // if (typeInput.value === "") {
-  //   return null;
-  // }
-
   const typeTodo = document.createElement("li");
   if (typeInput.value === "business") {
-    typeTodo.innerHTML = '<i class="fas fa-briefcase" alt="business briefcase"></i>';
+    typeTodo.innerHTML =
+      '<i class="fas fa-briefcase" alt="business briefcase"></i>';
   } else if (typeInput.value === "personal") {
     typeTodo.innerHTML = '<i class="fas fa-tv" alt="personal tv"></i>';
   }
