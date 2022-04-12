@@ -68,6 +68,10 @@ header {
   padding: 0.7rem 1rem 0rem 1rem;
 }
 
+header h2 { 
+  font-size: 1.17rem;
+}
+
 /*general main body styling*/
 main {
   background-color: #81c3d9;
@@ -89,7 +93,7 @@ main {
   outline: none;
   border: none;
   background-color: transparent;
-  border-bottom: 1px solid #011126;  
+  border-bottom: 1px solid #011126;
   width: 7.6rem;
   padding: 0rem 0rem 0.3rem 0rem;
   font-size: 1rem;
