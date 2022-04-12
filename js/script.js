@@ -1,9 +1,11 @@
 /*----------Header date----------*/
 const CURRENT_DATE = new Date();
 const DAY = CURRENT_DATE.getDate();
+const PADDED_DAY = DAY.toString().padStart(2, '0')
 const MONTH_AS_NUMBER = CURRENT_DATE.getMonth() + 1;
+const PADDED_MONTH = MONTH_AS_NUMBER.toString().padStart(2, '0')
 const YEAR = CURRENT_DATE.getFullYear();
-document.querySelector("#date").innerHTML = `${DAY}/${MONTH_AS_NUMBER}/${YEAR}`;
+document.querySelector("#date").innerHTML = `${PADDED_DAY}/${PADDED_MONTH}/${YEAR}`;
 
 /*----------Modal----------*/
 //variables
