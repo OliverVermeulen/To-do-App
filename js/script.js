@@ -67,9 +67,9 @@ function addTodo(event) {
 
   const typeTodo = document.createElement("li");
   if (typeInput.value === "business") {
-    typeTodo.innerHTML = '<i class="fas fa-briefcase"></i>';
+    typeTodo.innerHTML = '<i class="fas fa-briefcase" alt="business briefcase"></i>';
   } else if (typeInput.value === "personal") {
-    typeTodo.innerHTML = '<i class="fas fa-tv"></i>';
+    typeTodo.innerHTML = '<i class="fas fa-tv" alt="personal tv"></i>';
   }
   typeTodo.classList.add("todoType");
   todoDiv.appendChild(typeTodo);
