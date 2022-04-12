@@ -101,14 +101,6 @@ function addTodo(event) {
   console.log(todoDiv);
 }
 
-// let btnCounter = document.querySelector("#btnCounter");
-// let counter = 0;
-
-// btnCounter.addEventListener("click", function () {
-//   counter++;
-//   console.log(counter);
-// });
-
 function deleteCheck(e) {
   const item = e.target;
   if (item.classList[0] === "deleteBtn") {
