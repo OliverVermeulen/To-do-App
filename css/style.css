@@ -40,7 +40,9 @@ body {
   box-shadow: 4px 4px 40px #011126;
 }
 
-#app h1, h2, h3 {
+#app h1,
+h2,
+h3 {
   margin: 0%;
 }
 
@@ -65,23 +67,18 @@ header {
   background-color: #f2ad85;
   color: whitesmoke;
   height: 200px;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 0.7rem;
+  padding: 0.7rem 1rem 0rem 1rem;
 }
 
 /*general main body styling*/
 main {
   background-color: #81c3d9;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding: 0rem 1rem 0rem 1rem;
 }
 
 /*inbox styling*/
 #inbox {
-  /* color: whitesmoke; */
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 0.7rem 0rem 0.7rem 0rem;
   text-transform: uppercase;
   display: flex;
   flex-direction: row;
@@ -149,25 +146,24 @@ main {
 .completeBtn {
   background-color: #fbc097;
 }
-.completeBtn:active {
-  background: #f28f6b;
-}
 
 .editBtn {
-  background: #f28f6b;
-}
-.editBtn:active {
-  background: #d96d55;
+  background-color: #f28f6b;
 }
 
 .deleteBtn {
-  background: #d96d55;
-}
-.deleteBtn:active {
-  background: #fbc097;
+  background-color: #d96d55;
 }
 
-.fa-check, .fa-pen, .fa-trash {
+.completeBtn:active,
+.editBtn:active,
+.deleteBtn:active {
+  filter: contrast(50%);
+}
+
+.fa-check,
+.fa-pen,
+.fa-trash {
   pointer-events: none;
 }
 
@@ -219,7 +215,7 @@ main {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal-header {
@@ -252,7 +248,7 @@ main {
 
 .close:hover,
 .close:focus {
-  color: rgb(184, 179, 179);
+  color: gainsboro;
   text-decoration: none;
   cursor: pointer;
 }
@@ -270,7 +266,8 @@ form {
   justify-content: start;
 }
 
-form input, form select {
+form input,
+form select {
   padding: 0rem 0.3rem 0.3rem 0.3rem;
   margin-bottom: 1.2rem;
   border: none;
@@ -315,8 +312,7 @@ footer {
   color: whitesmoke;
   height: 50px;
   text-transform: uppercase;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding: 0rem 1rem 0rem 1rem;
   display: flex;
   flex-direction: row;
   align-items: center;
