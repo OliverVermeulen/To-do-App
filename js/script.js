@@ -95,7 +95,7 @@ const create = () => {
 //   if (taskType.value === "business") {
 //     type ='<i class="fas fa-briefcase" alt="business briefcase"></i>';
 //   } else if (taskType.value === "personal") {
-//     typw = '<i class="fas fa-tv" alt="personal tv"></i>';
+//     type = '<i class="fas fa-tv" alt="personal tv"></i>';
 //   }
 
   // class and object stuff
