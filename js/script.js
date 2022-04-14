@@ -8,9 +8,7 @@ const PADDED_DAY = DAY.toString().padStart(2, "0");
 const MONTH_AS_NUMBER = CURRENT_DATE.getMonth() + 1;
 const PADDED_MONTH = MONTH_AS_NUMBER.toString().padStart(2, "0");
 const YEAR = CURRENT_DATE.getFullYear();
-document.querySelector(
-  "#date"
-).innerHTML = `${PADDED_DAY}/${PADDED_MONTH}/${YEAR}`;
+document.querySelector("#date").innerHTML = `${PADDED_DAY}/${PADDED_MONTH}/${YEAR}`;
 
 /*----------Modal----------*/
 //variables
@@ -48,7 +46,7 @@ const generateId = () => {
 
 if (!localStorage.getItem(TodoAppKey)) {
   taskList = [
-    new Task(generateId(), "Personal", "Work drinks", "2022-05-31T19:00"),
+    new Task(generateId(), "Personal", "Christmas", "2022-12-24T20:00"),
   ];
   taskList = JSON.stringify(taskList);
   localStorage.setItem(TodoAppKey, taskList);
@@ -115,6 +113,16 @@ const checkTask = (event) => {
 
 const editTask = (event) => {
   console.log(event.target);
+  let tasks = Array.from(JSON.parse(localStorage.getItem(TodoAppKey)));
+  tasks.forEach((task) => {
+    if (task.task === event.target.parentNode.children[1].value) {
+      // delete task
+      tasks.splice(tasks.indexOf(task), 1);
+    }
+  });
+  localStorage.setItem(TodoAppKey, JSON.stringify(tasks));
+  event.target.parentElement.remove();
+  modal.style.display = "block";
 };
 
 const deleteTask = (event) => {

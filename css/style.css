@@ -169,7 +169,7 @@ main {
   pointer-events: none;
 }
 
-/*completed tasks*/
+/*checking tasks off*/
 .completedItem {
   text-decoration: line-through;
   opacity: 70%;
