@@ -72,7 +72,7 @@ const populateTasks = (taskArray) => {
 
   taskArray.forEach((task) => {
     taskDisplay.innerHTML += `
-        <div class="task-card" id="${task._id}">
+        <div class="task-card todo" id="${task._id}">
             <span>${task._type}</span>
             <span>${task._name}</span>
             <span>${task._date}</span>

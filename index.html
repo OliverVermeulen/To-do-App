@@ -37,8 +37,6 @@
         <container id="main-body">
           <div class="todo-container">
             <div class="todoList" id="task-display"></div>
-              <div id="task-display"></div>
-            </div>
           </div>
         </container>
 
@@ -58,18 +56,19 @@
               <!-- form and inputs -->
               <form id="inputForm">
                 <label for="typeInput" class="form-label">Task type:</label>
-                <select name="task-type" class="typeInput" id="taskType" required>
+                <select name="task-type" id="taskType" class="typeInput" required>
                   <option class="type-select" disabled selected>Choose task type</option>
                   <option class="type-select" value="Business">Business</option>
                   <option class="type-select" value="Personal">Personal</option>
                 </select>
 
                 <label for="taskInput" class="form-label">Task name:</label>
-                <input type="text" placeholder="Enter task name" class="taskInput" id="taskName" maxlength="15" required />
+                <input type="text" placeholder="Enter task name" id="taskName" class="taskInput" maxlength="15" required />
 
                 <label for="dueInput" class="form-label">Date and time:</label>
-                <input type="datetime-local" class="dueInput" id="taskDate" max="2030-12-31T23:59" required />
-                <button class="todoBtn" id="createTask" type="submit">Submit</button>
+                <input type="datetime-local" id="taskDate" class="dueInput" max="2100-12-31T24:00" required />
+
+                <button class="todoBtn" type="submit" id="createTask">Submit</button>
               </form>
             </div>
           </modal>
