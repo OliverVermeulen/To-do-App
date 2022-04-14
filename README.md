@@ -1,7 +1,7 @@
 # Mountain Of Stuff / Todo app
 
 ## Description
-This is an application that can be used to write down tasks and display them in a list.
+This is an application that can be used to write down todo tasks and display them in a list
 
 
 ## How to use
@@ -26,9 +26,9 @@ This is an application that can be used to write down tasks and display them in 
 ## Backlog
 - Add more inputs to form (complete)
 - Edit tasks (complete)
-- Sort tasks alphabetically
-- Save tasks in their expected states and order even after the browser has been closed
-- Add local storage
+- Sort tasks alphabetically (complete)
+- Save tasks in their expected states and order even after the browser has been closed (complete)
+- Add local storage (complete)
 - Add tasks completed counter
 - Add in modal (complete)
 
