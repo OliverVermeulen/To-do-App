@@ -89,14 +89,14 @@ const populateTasks = (taskArray) => {
 
 const create = () => {
   // getting inputs
-  let type = document.getElementById("taskType").value;
-  let name = document.getElementById("taskName").value;
-  let date = document.getElementById("taskDate").value;
-//   if (taskType.value === "business") {
-//     type ='<i class="fas fa-briefcase" alt="business briefcase"></i>';
-//   } else if (taskType.value === "personal") {
-//     type = '<i class="fas fa-tv" alt="personal tv"></i>';
-//   }
+  let type = document.querySelector("#taskType").value;
+  let name = document.querySelector("#taskName").value;
+  let date = document.querySelector("#taskDate").value;
+  //   if (taskType.value === "business") {
+  //     type ='<i class="fas fa-briefcase" alt="business briefcase"></i>';
+  //   } else if (taskType.value === "personal") {
+  //     type = '<i class="fas fa-tv" alt="personal tv"></i>';
+  //   }
 
   // class and object stuff
   let createdTask = new Task(generateId(), type, name, date);
@@ -131,7 +131,7 @@ const deleteTask = (event) => {
 };
 
 // vars
-let createTaskBtn = document.getElementById("createTask");
+let createTaskBtn = document.querySelector("#createTask");
 
 // functions
 populateTasks(taskList);
@@ -140,10 +140,6 @@ createTaskBtn.addEventListener("click", () => {
 });
 
 // localStorage.clear()
-
-
-
-
 
 // /*----------Form----------*/
 // //variables
@@ -225,7 +221,7 @@ createTaskBtn.addEventListener("click", () => {
 //   taskInput.value = "";
 //   dueInput.value = "";
 
-//   document.getElementById("completeDisplay").innerHTML =
+//   document.querySelector("#completeDisplay").innerHTML =
 //     todoList.childElementCount;
 // }
 
@@ -238,10 +234,12 @@ createTaskBtn.addEventListener("click", () => {
 //     todo.addEventListener("transitionend", function () {
 //       todo.remove();
 //     });
+
 //   } else if (item.classList[0] === "completeBtn") {
 //     //check item
 //     const todo = item.parentElement;
 //     todo.classList.toggle("completedItem");
+
 //   } else if (item.classList[0] === "editBtn") {
 //     const todo = item.parentElement;
 //     todo.classList.add("fall");
