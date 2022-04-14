@@ -127,7 +127,7 @@ main {
   padding: 0%;
 }
 
-.todo li {
+.todo span {
   flex: 1;
 }
 
