@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="shortcut icon" href="./images/mountain-icon.png" type="image/x-icon" />
     <script src="https://kit.fontawesome.com/e4ad388285.js" crossorigin="anonymous" defer></script>
-    <script src="./js/script.js" defer></script>
+    <script src="./js/script.js" type="module" defer></script>
     <title>Mountain Of Stuff</title>
   </head>
   <body>
@@ -36,7 +36,7 @@
         <!-- todo container -->
         <container id="main-body">
           <div class="todo-container">
-            <ul class="todoList"></ul>
+            <div class="todoList" id="task-display"></div>
           </div>
         </container>
 
@@ -56,20 +56,18 @@
               <!-- form and inputs -->
               <form id="inputForm">
                 <label for="typeInput" class="form-label">Task type:</label>
-                <select name="task-type" class="typeInput" required>
-                  <option class="type-select" disabled selected>
-                    Choose task type
-                  </option>
+                <select name="task-type" class="typeInput" id="taskType" required>
+                  <option class="type-select" disabled selected>Choose task type</option>
                   <option class="type-select" value="Business">Business</option>
                   <option class="type-select" value="Personal">Personal</option>
                 </select>
 
                 <label for="taskInput" class="form-label">Task name:</label>
-                <input type="text" placeholder="Enter task name" class="taskInput" maxlength="15" required />
+                <input type="text" placeholder="Enter task name" class="taskInput" id="taskName" maxlength="15" required />
 
                 <label for="dueInput" class="form-label">Date and time:</label>
-                <input type="datetime-local" class="dueInput" max="2030-12-31T23:59" required />
-                <button class="todoBtn" type="submit">Submit</button>
+                <input type="datetime-local" class="dueInput" id="taskDate" max="2030-12-31T23:59" required />
+                <button class="todoBtn" id="createTask" type="submit">Submit</button>
               </form>
             </div>
           </modal>
