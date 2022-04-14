@@ -166,3 +166,102 @@ function filterTodo(e) {
     }
   }
 }
+
+
+// /*----Setup----*/
+// import { Task } from "../classes/Task.js";
+
+// const TodoAppKey = "todo-app-storage-key";
+// let taskList = [];
+
+// const generateId = () => {
+//   return (new Date()).getTime();
+// }
+
+// if (!localStorage.getItem(TodoAppKey)) {
+//   taskList = [new Task(generateId(), "Personal", "Work drinks", "2022-05-31T19:00")];
+//   taskList = JSON.stringify(taskList);
+//   localStorage.setItem(TodoAppKey, taskList);
+//   taskList = JSON.parse(localStorage.getItem(TodoAppKey));
+// } else {
+//   taskList = JSON.parse(localStorage.getItem(TodoAppKey));
+// }
+
+// taskList.sort((a, b) => {
+//   if (a._name.toLowerCase() < b._name.toLowerCase()) {
+//     return -1
+//   } else if (a._name.toLowerCase() > b._name.toLowerCase()) {
+//     return 1
+//   }
+//   return 0
+// })
+
+// const populateTasks = (taskArray) => {
+//   // get display element
+//   let taskDisplay = document.querySelector("#task-display");
+
+//   taskArray.forEach((task) => {
+//     taskDisplay.innerHTML += `
+//         <div class="task-card" id="${task._id}">
+//             <span>${task._type}</span>
+//             <span>${task._name}</span>
+//             <span>${task._date}</span>
+//             <button class="inputs" id="checkBtn${task._id}"><i class="fas fa-check" alt="complete icon"></i></button>
+//             <button class="inputs" id="editBtn${task._id}"><i class="fas fa-pen" alt="edit icon"></i></button>
+//             <button class="inputs" id="deleteBtn${task._id}"><i class="fas fa-trash" alt="delete icon"></i></button>
+//         </div>
+//         `;
+//     document.getElementById(`checkBtn${task._id}`).onclick = checkTask;
+//     document.getElementById(`editBtn${task._id}`).onclick = editTask;
+//     document.getElementById(`deleteBtn${task._id}`).onclick = deleteTask;
+//   });
+// };
+
+// const create = () => {
+//   // getting inputs
+//   let type = document.getElementById("taskType").value;
+//   let name = document.getElementById("taskName").value;
+//   let date = document.getElementById("taskDate").value;
+
+//   // class and object stuff
+//   let createdTask = new Task(generateId(), type, name, date);
+//   taskList.push(createdTask);
+//   console.log(createdTask);
+
+//   // storage stuff
+//   taskList = JSON.stringify(taskList);
+//   localStorage.setItem(TodoAppKey, taskList);
+//   taskList = JSON.parse(localStorage.getItem(TodoAppKey));
+// };
+
+// const checkTask = (event) => {
+//   console.log(event.target)
+// }
+
+// const editTask = (event) => {
+//   console.log(event.target)
+// }
+
+// const deleteTask = (event) => {
+//   console.log(event.target)
+//   let tasks = Array.from(JSON.parse(localStorage.getItem(TodoAppKey)));
+//   tasks.forEach(task => {
+//     if (task.task === event.target.parentNode.children[1].value) {
+//       // delete task
+//       tasks.splice(tasks.indexOf(task), 1);
+//     }
+//   });
+//   localStorage.setItem(TodoAppKey, JSON.stringify(tasks));
+//   event.target.parentElement.remove();
+// }
+
+// // vars
+// let createTaskBtn = document.getElementById("createTask");
+
+// // functions
+// populateTasks(taskList);
+// createTaskBtn.addEventListener("click", () => {
+//   create();
+// });
+
+// // localStorage.clear()
