@@ -9,13 +9,18 @@
   font-display: swap;
 }
 
+::selection {
+  background-color: #ffad8c;
+  color: whitesmoke;
+}
+
 /*general styling*/
 body {
   color: black;
   font-size: 1rem;
   font-family: Roboto-Light;
   margin: 2.5rem 0rem 2.5rem 0rem;
-  background: linear-gradient(-45deg, #0DA3C6, #6DA6B1, #F09A69, #B86249);
+  background: linear-gradient(-45deg, #0da3c6, #6da6b1, #f09a69, #b86249);
   background-size: 400% 400%;
   animation: gradient 20s ease infinite;
 }
@@ -39,9 +44,7 @@ body {
   box-shadow: 4px 4px 40px #011126;
 }
 
-#app h1,
-h2,
-h3 {
+#app h1, h2, h3 {
   margin: 0%;
 }
 
@@ -132,9 +135,7 @@ main {
 }
 
 /*task container button styling*/
-.completeBtn,
-.editBtn,
-.deleteBtn {
+.completeBtn, .editBtn, .deleteBtn {
   background-color: #f2ad85;
   color: whitesmoke;
   padding: 0.5rem;
@@ -157,15 +158,11 @@ main {
   background-color: #d96d55;
 }
 
-.completeBtn:active,
-.editBtn:active,
-.deleteBtn:active {
+.completeBtn:active, .editBtn:active, .deleteBtn:active {
   filter: contrast(50%);
 }
 
-.fa-check,
-.fa-pen,
-.fa-trash {
+.fa-check, .fa-pen, .fa-trash {
   pointer-events: none;
 }
 
@@ -267,8 +264,7 @@ form {
   justify-content: start;
 }
 
-form input,
-form select {
+form input, form select {
   padding: 0rem 0.3rem 0.3rem 0.3rem;
   margin: 0rem 0rem 1.2rem 0rem;
   border: none;
@@ -335,9 +331,4 @@ footer button {
 footer button:hover {
   background-color: whitesmoke;
   color: #81c3d9;
-}
-
-::selection {
-  background-color: #ffad8c;
-  color: whitesmoke;
 }

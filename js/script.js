@@ -1,6 +1,7 @@
 /*---------- Import/Inheritance ---------*/
 import { Task } from "../classes/Task.js";
 
+
 /*---------- Header display date ----------*/
 // variables
 const CURRENT_DATE = new Date();
@@ -14,7 +15,7 @@ const YEAR = CURRENT_DATE.getFullYear();
 document.querySelector(
   "#date"
 ).innerHTML = `${PADDED_DAY}/${PADDED_MONTH}/${YEAR}`;
-/*-----------------------------------------*/
+
 
 /*---------- Modal ----------*/
 // variables
@@ -41,9 +42,11 @@ window.addEventListener("click", (event) => {
   }
 });
 
+
 /*---------- Local Storage Key ---------*/
 const TodoAppKey = "todo-app-storage-key";
 let taskList = [];
+
 
 /*---------- Form ----------*/
 // task id generator
