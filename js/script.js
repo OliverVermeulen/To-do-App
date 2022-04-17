@@ -1,6 +1,11 @@
-/*---------- Import/Inheritance ----------*/
+/*---------- Import/Inheritance ---------*/
 import { Task } from "../classes/Task.js";
 /*---------------------------------------*/
+
+/*---------- Local Storage Key ---------*/
+const TodoAppKey = "todo-app-storage-key";
+let taskList = [];
+/*--------------------------------------*/
 
 /*---------- Header display date ----------*/
 // variables
@@ -44,10 +49,6 @@ window.addEventListener("click", (event) => {
 /*---------------------------*/
 
 /*---------- Form ----------*/
-// local storage key
-const TodoAppKey = "todo-app-storage-key";
-let taskList = [];
-
 // task id generator
 const generateId = () => {
   return new Date().getTime();
