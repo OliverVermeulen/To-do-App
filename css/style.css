@@ -312,27 +312,33 @@ footer {
   background-position: bottom;
   background-color: #010916;
   color: whitesmoke;
-  height: 50px;
-  text-transform: uppercase;
+  height: 60px;
   padding: 0rem 1rem 0rem 1rem;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-#completeDisplay {
-  margin-left: 10px;
-  border: 1px solid whitesmoke;
-  border-radius: 50%;
-  text-align: center;
-  width: 30px;
-  height: 30px;
-  font-weight: bolder;
-  padding: 5px;
-  font-size: 1rem;
+footer button {
+  background-color: #81c3d9;
+  color: whitesmoke;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 80px;
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  border: none;
+  margin: 0 auto;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+footer button:hover {
+  background-color: whitesmoke;
+  color: #81c3d9;
 }
 
 ::selection {
-  background-color: #FFAD8C;
+  background-color: #ffad8c;
   color: whitesmoke;
 }

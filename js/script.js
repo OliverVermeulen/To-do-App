@@ -17,7 +17,6 @@ document.querySelector(
 ).innerHTML = `${PADDED_DAY}/${PADDED_MONTH}/${YEAR}`;
 /*-----------------------------------------*/
 
-
 /*---------- Modal ----------*/
 // variables
 const modal = document.querySelector("#myModal");
@@ -44,7 +43,6 @@ window.addEventListener("click", (event) => {
 });
 /*---------------------------*/
 
-
 /*---------- Form ----------*/
 // local storage key
 const TodoAppKey = "todo-app-storage-key";
@@ -57,9 +55,7 @@ const generateId = () => {
 
 // default tasks
 if (!localStorage.getItem(TodoAppKey)) {
-  taskList = [
-    new Task(generateId(), "New Years", "2022-12-31T24:00"),
-  ];
+  taskList = [new Task(generateId(), "New Years", "2022-12-31T24:00")];
   taskList = JSON.stringify(taskList);
   localStorage.setItem(TodoAppKey, taskList);
   taskList = JSON.parse(localStorage.getItem(TodoAppKey));
@@ -121,6 +117,7 @@ const checkTask = (event) => {
 
 // edit existing task
 const editTask = (event) => {
+  // removing old task from list and local storage
   console.log(event.target);
   let tasks = Array.from(JSON.parse(localStorage.getItem(TodoAppKey)));
   tasks.forEach((task) => {
@@ -131,6 +128,7 @@ const editTask = (event) => {
   });
   localStorage.setItem(TodoAppKey, JSON.stringify(tasks));
   event.target.parentElement.remove();
+  // bringing up modal for new task
   modal.style.display = "block";
 };
 
@@ -159,4 +157,7 @@ createTaskBtn.addEventListener("click", () => {
 /*--------------------------*/
 
 // localStorage.clear()
-
+const clearList = document.querySelector(".clearList");
+clearList.addEventListener("click", () => {
+  // localStorage.clear()
+});
