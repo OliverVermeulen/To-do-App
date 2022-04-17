@@ -240,10 +240,6 @@ main {
   max-width: 540px;
 }
 
-.modal-content .type-select {
-  background-color: whitesmoke;
-}
-
 .close {
   color: whitesmoke;
   float: right;
