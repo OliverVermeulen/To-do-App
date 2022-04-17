@@ -23,9 +23,9 @@
       <main id="main">
         <inbox id="inbox">
           <h3>Tasks:</h3>
-          <!-- task filter -->
+          <!-- task list sorter -->
           <div class="select">
-            <select name="todos" class="filterTodo">
+            <select name="todos" class="sortTodo">
               <option class="type-select" value="all">All</option>
               <option class="type-select" value="alphabetical">Alphabetical</option>
               <option class="type-select" value="numerical">Numerical</option>
@@ -61,9 +61,7 @@
                 <label for="dueInput" class="form-label">Date and time:</label>
                 <input type="datetime-local" id="taskDate" class="dueInput" max="2030-12-31T23:59" required />
                 <!-- create task -->
-                <button class="todoBtn" type="submit" id="createTask">
-                  Submit
-                </button>
+                <button class="todoBtn" type="submit" id="createTask">Submit</button>
               </form>
             </div>
           </modal>
