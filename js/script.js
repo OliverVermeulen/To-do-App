@@ -1,11 +1,5 @@
 /*---------- Import/Inheritance ---------*/
 import { Task } from "../classes/Task.js";
-/*---------------------------------------*/
-
-/*---------- Local Storage Key ---------*/
-const TodoAppKey = "todo-app-storage-key";
-let taskList = [];
-/*--------------------------------------*/
 
 /*---------- Header display date ----------*/
 // variables
@@ -46,7 +40,10 @@ window.addEventListener("click", (event) => {
     document.querySelector("#inputForm").reset();
   }
 });
-/*---------------------------*/
+
+/*---------- Local Storage Key ---------*/
+const TodoAppKey = "todo-app-storage-key";
+let taskList = [];
 
 /*---------- Form ----------*/
 // task id generator
@@ -155,10 +152,9 @@ populateTasks(taskList);
 createTaskBtn.addEventListener("click", () => {
   create();
 });
-/*--------------------------*/
 
-// localStorage.clear()
+// clear task list/local storage
 const clearList = document.querySelector(".clearList");
 clearList.addEventListener("click", () => {
-  localStorage.clear()
+  localStorage.clear();
 });
