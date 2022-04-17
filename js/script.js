@@ -58,7 +58,7 @@ const generateId = () => {
 // default tasks
 if (!localStorage.getItem(TodoAppKey)) {
   taskList = [
-    new Task(generateId(), "Personal", "Christmas", "2022-12-24T20:00"),
+    new Task(generateId(), "New Years", "2022-12-31T24:00"),
   ];
   taskList = JSON.stringify(taskList);
   localStorage.setItem(TodoAppKey, taskList);
@@ -84,7 +84,6 @@ const populateTasks = (taskArray) => {
   taskArray.forEach((task) => {
     taskDisplay.innerHTML += `
         <div class="task-card todo" id="${task._id}">
-            <span>${task._type}</span>
             <span>${task._name}</span>
             <span>${task._date}</span>
             <button class="inputs completeBtn" id="checkBtn${task._id}"><i class="fas fa-check" alt="complete icon"></i></button>
@@ -101,12 +100,11 @@ const populateTasks = (taskArray) => {
 // create new task
 const create = () => {
   // getting inputs
-  let type = document.querySelector("#taskType").value;
   let name = document.querySelector("#taskName").value;
   let date = document.querySelector("#taskDate").value;
 
   // pushing task
-  let createdTask = new Task(generateId(), type, name, date);
+  let createdTask = new Task(generateId(), name, date);
   taskList.push(createdTask);
   console.log(createdTask);
 
