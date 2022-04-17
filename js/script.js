@@ -159,5 +159,5 @@ createTaskBtn.addEventListener("click", () => {
 // localStorage.clear()
 const clearList = document.querySelector(".clearList");
 clearList.addEventListener("click", () => {
-  // localStorage.clear()
+  localStorage.clear()
 });
