@@ -15,9 +15,9 @@ body {
   font-size: 1rem;
   font-family: Roboto-Light;
   margin: 2.5rem 0rem 2.5rem 0rem;
-  background: linear-gradient(-45deg, #1b4d67, #04adbf, #f28f6b, #d96d55);
+  background: linear-gradient(-45deg, #0DA3C6, #6DA6B1, #F09A69, #B86249);
   background-size: 400% 400%;
-  animation: gradient 30s ease infinite;
+  animation: gradient 20s ease infinite;
 }
 
 @keyframes gradient {
