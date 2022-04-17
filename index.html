@@ -42,7 +42,7 @@
 
         <!-- add item button -->
         <form-modal id="button">
-          <button id="add-btn" class="myBtn" title="Add button">
+          <button id="add-btn" class="myBtn push" title="Add button">
             <i class="fas fa-plus" id="plus-icon" alt="Add icon"></i>
           </button>
           <!-- modal -->
@@ -61,7 +61,7 @@
                 <label for="dueInput" class="form-label">Date and time:</label>
                 <input type="datetime-local" id="taskDate" class="dueInput" max="2030-12-31T23:59" required />
                 <!-- create task -->
-                <button class="todoBtn" type="submit" id="createTask">Submit</button>
+                <button id="createTask" class="todoBtn push" type="submit">Submit</button>
               </form>
             </div>
           </modal>
@@ -70,7 +70,7 @@
 
       <!-- footer -->
       <footer id="footer">
-        <button id="clear" class="clearList">Clear</button>
+        <button id="clear" class="clearList push">Clear</button>
       </footer>
     </div>
   </body>

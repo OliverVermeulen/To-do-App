@@ -90,9 +90,9 @@ const populateTasks = (taskArray) => {
         <div class="task-card todo" id="${task._id}">
             <span>${task._name}</span>
             <span>${task._date}</span>
-            <button class="inputs completeBtn" id="checkBtn${task._id}"><i class="fas fa-check" alt="complete icon"></i></button>
-            <button class="inputs editBtn" id="editBtn${task._id}"><i class="fas fa-pen" alt="edit icon"></i></button>
-            <button class="inputs deleteBtn" id="deleteBtn${task._id}"><i class="fas fa-trash" alt="delete icon"></i></button>
+            <button class="inputs completeBtn push" id="checkBtn${task._id}"><i class="fas fa-check" alt="complete icon"></i></button>
+            <button class="inputs editBtn push" id="editBtn${task._id}"><i class="fas fa-pen" alt="edit icon"></i></button>
+            <button class="inputs deleteBtn push" id="deleteBtn${task._id}"><i class="fas fa-trash" alt="delete icon"></i></button>
         </div>
         `;
     document.getElementById(`checkBtn${task._id}`).onclick = checkTask;
