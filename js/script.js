@@ -155,7 +155,6 @@ const editTask = (event) => {
   taskList = Array.from(JSON.parse(localStorage.getItem(TodoAppKey)));
   taskList.forEach((task) => {
     if (task._id.toString() === event.target.parentNode.id) {
-      // delete task
       taskList.splice(taskList.indexOf(task), 1);
     }
   });
@@ -172,7 +171,6 @@ const deleteTask = (event) => {
   let taskList = Array.from(JSON.parse(localStorage.getItem(TodoAppKey)));
   taskList.forEach((task) => {
     if (task._id.toString() === event.target.parentNode.id) {
-      // delete task
       taskList.splice(taskList.indexOf(task), 1);
     }
   });
