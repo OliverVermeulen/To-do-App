@@ -47,7 +47,7 @@ let taskList = [];
 /*---------- Form ----------*/
 // task id generator
 const generateId = () => {
-  return new Date().getTime();
+  return new Date().getTime() + parseInt((Math.random()*1000000).toString(), 10);
 };
 
 // default tasks
@@ -141,7 +141,7 @@ const editTask = (event) => {
   console.log(event.target);
   taskList = Array.from(JSON.parse(localStorage.getItem(TodoAppKey)));
   taskList.forEach((task) => {
-    if (task.task === event.target.parentNode.children[1].value) {
+    if (task._id.toString() === event.target.parentNode.id) {
       // delete task
       taskList.splice(taskList.indexOf(task), 1);
     }
@@ -150,6 +150,7 @@ const editTask = (event) => {
   event.target.parentElement.remove();
   // bringing up modal for new task
   modal.style.display = "block";
+  populateTasks(taskList);
 };
 
 // delete task
@@ -157,13 +158,14 @@ const deleteTask = (event) => {
   console.log(event.target);
   let taskList = Array.from(JSON.parse(localStorage.getItem(TodoAppKey)));
   taskList.forEach((task) => {
-    if (task.task === event.target.parentNode.children[1].value) {
+    if (task._id.toString() === event.target.parentNode.id) {
       // delete task
       taskList.splice(taskList.indexOf(task), 1);
     }
   });
   localStorage.setItem(TodoAppKey, JSON.stringify(taskList));
   event.target.parentElement.remove();
+  populateTasks(taskList);
 };
 
 // create task
