@@ -27,7 +27,9 @@
           <div class="select">
             <select name="todos" class="sortTodo">
               <!-- <option class="type-select" value="all">All</option> -->
-              <option class="type-select" value="Alphabetical">Alphabetical</option>
+              <option class="type-select" value="Alphabetical">
+                Alphabetical
+              </option>
               <option class="type-select" value="Numerical">Numerical</option>
             </select>
           </div>
@@ -56,7 +58,7 @@
               <form id="inputForm">
                 <!-- name of task -->
                 <label for="taskInput" class="form-label">Task name:</label>
-                <input type="text" placeholder="Enter task name" id="taskName" class="taskInput" maxlength="15" required />
+                <input type="text" placeholder="Enter task name" id="taskName" class="taskInput" maxlength="20" required />
                 <!-- due date and time -->
                 <label for="dueInput" class="form-label">Date and time:</label>
                 <input type="datetime-local" id="taskDate" class="dueInput" max="2030-12-31T23:59" required />
