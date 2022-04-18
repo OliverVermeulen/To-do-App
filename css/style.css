@@ -167,7 +167,7 @@ main {
 }
 
 /*checking tasks off*/
-.completedItem {
+.completed {
   text-decoration: line-through;
   opacity: 70%;
   transform: scale(95%);
@@ -210,6 +210,12 @@ main {
 
 @keyframes push{
   50%  {transform: scale(0.8);}
+}
+
+@media screen and (max-width: 1200px) {
+  .todo {
+    text-align: center;
+  }
 }
 
 /*modal styling*/

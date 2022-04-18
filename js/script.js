@@ -47,21 +47,22 @@ let taskList = [];
 /*---------- Form ----------*/
 // task id generator
 const generateId = () => {
-  return new Date().getTime() + parseInt((Math.random()*1000000).toString(), 10);
+  return (
+    new Date().getTime() + parseInt((Math.random() * 1000000).toString(), 10)
+  );
 };
 
 // default tasks
-if (!localStorage.getItem(TodoAppKey)) {
+const clearTasks = () => {
   taskList = [
-    new Task(generateId(), "New Years", "2022-12-31T24:00"),
-    new Task(generateId(), "Christmas", "2022-12-25T19:00"),
-    new Task(generateId(), "New Years", "2021-12-31T24:00"),
-    new Task(generateId(), "Christmas", "2021-12-25T19:00"),
-    new Task(generateId(), "Jesse b-day", "2022-05-21T16:00"),
+    new Task(generateId(), "Box sizing day", "2022-02-01T16:00")
   ];
   taskList = JSON.stringify(taskList);
   localStorage.setItem(TodoAppKey, taskList);
   taskList = JSON.parse(localStorage.getItem(TodoAppKey));
+};
+if (!localStorage.getItem(TodoAppKey)) {
+  clearTasks();
 } else {
   taskList = JSON.parse(localStorage.getItem(TodoAppKey));
 }
@@ -98,8 +99,12 @@ const populateTasks = (taskArray) => {
   let taskDisplay = document.querySelector("#task-display");
   taskDisplay.innerHTML = "";
   taskArray.forEach((task) => {
+    let completedTask = "";
+    if (task._completed) {
+      completedTask = "completed";
+    }
     taskDisplay.innerHTML += `
-        <div class="task-card todo" id="${task._id}">
+        <div class="task-card todo ${completedTask}" id="${task._id}">
             <span>${task._name}</span>
             <span>${task._date}</span>
             <button class="inputs completeBtn push" id="checkBtn${task._id}"><i class="fas fa-check" alt="complete icon"></i></button>
@@ -133,6 +138,14 @@ const create = () => {
 // check task off
 const checkTask = (event) => {
   console.log(event.target);
+  let taskList = Array.from(JSON.parse(localStorage.getItem(TodoAppKey)));
+  taskList.forEach((task) => {
+    if (task._id.toString() === event.target.parentNode.id) {
+      task._completed = !task._completed
+    }
+  });
+  localStorage.setItem(TodoAppKey, JSON.stringify(taskList));
+  populateTasks(taskList);
 };
 
 // edit existing task
@@ -180,5 +193,6 @@ createTaskBtn.addEventListener("click", () => {
 // clear task list/local storage
 const clearList = document.querySelector(".clearList");
 clearList.addEventListener("click", () => {
-  localStorage.clear();
+  clearTasks();
+  populateTasks(taskList);
 });
