@@ -147,7 +147,7 @@ main {
 }
 
 .completeBtn {
-  background-color: #FBC097;
+  background-color: #fbc097;
 }
 
 .editBtn {
@@ -171,12 +171,6 @@ main {
   text-decoration: line-through;
   opacity: 70%;
   transform: scale(95%);
-}
-
-/*task deletion*/
-.fall {
-  transform: translateX(3rem) scale(0.9);
-  opacity: 0;
 }
 
 /*add button styling*/
@@ -204,12 +198,14 @@ main {
   color: #81c3d9;
 }
 
-.push:active{
+.push:active {
   animation: push 0.1s linear 1;
 }
 
-@keyframes push{
-  50%  {transform: scale(0.8);}
+@keyframes push {
+  50% {
+    transform: scale(0.8);
+  }
 }
 
 @media screen and (max-width: 1200px) {
@@ -346,4 +342,3 @@ footer button:hover {
   background-color: whitesmoke;
   color: #81c3d9;
 }
-
