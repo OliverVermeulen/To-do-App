@@ -54,9 +54,7 @@ const generateId = () => {
 
 // default tasks
 const clearTasks = () => {
-  taskList = [
-    new Task(generateId(), "Box sizing day", "2022-02-01T16:00")
-  ];
+  taskList = [new Task(generateId(), "Box sizing day", "2022-02-01T16:00")];
   taskList = JSON.stringify(taskList);
   localStorage.setItem(TodoAppKey, taskList);
   taskList = JSON.parse(localStorage.getItem(TodoAppKey));
@@ -141,7 +139,7 @@ const checkTask = (event) => {
   let taskList = Array.from(JSON.parse(localStorage.getItem(TodoAppKey)));
   taskList.forEach((task) => {
     if (task._id.toString() === event.target.parentNode.id) {
-      task._completed = !task._completed
+      task._completed = !task._completed;
     }
   });
   localStorage.setItem(TodoAppKey, JSON.stringify(taskList));
