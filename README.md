@@ -30,10 +30,12 @@ This is an application that can be used to write down todo tasks and display the
 - Sort tasks alphabetically (complete)
 - Save tasks in their expected states and order even after the browser has been closed (complete)
 - Add local storage (complete)
-- Add tasks completed counter
 - Add in modal (complete)
 
 ## Links
 
 ### Deploy link
 https://oliververmeulen.github.io/todo-app-spa/
+
+### Repo link
+https://github.com/OliverVermeulen/todo-app-spa
