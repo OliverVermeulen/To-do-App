@@ -52,7 +52,13 @@ const generateId = () => {
 
 // default tasks
 if (!localStorage.getItem(TodoAppKey)) {
-  taskList = [new Task(generateId(), "New Years", "2022-12-31T24:00")];
+  taskList = [
+    new Task(generateId(), "New Years", "2022-12-31T24:00"),
+    new Task(generateId(), "Christmas", "2022-12-25T19:00"),
+    new Task(generateId(), "New Years", "2021-12-31T24:00"),
+    new Task(generateId(), "Christmas", "2021-12-25T19:00"),
+    new Task(generateId(), "Jesse b-day", "2022-05-21T16:00"),
+  ];
   taskList = JSON.stringify(taskList);
   localStorage.setItem(TodoAppKey, taskList);
   taskList = JSON.parse(localStorage.getItem(TodoAppKey));
@@ -60,31 +66,37 @@ if (!localStorage.getItem(TodoAppKey)) {
   taskList = JSON.parse(localStorage.getItem(TodoAppKey));
 }
 
-// sort task list alphabetically
-taskList.sort((a, b) => {
-  if (a._name.toLowerCase() < b._name.toLowerCase()) {
-    return -1;
-  } else if (a._name.toLowerCase() > b._name.toLowerCase()) {
-    return 1;
+// sort task list alphabetically or numerically
+const sortTaskList = () => {
+  if (sortTodo.value === "Alphabetical") {
+    taskList.sort((a, b) => {
+      if (a._name.toLowerCase() < b._name.toLowerCase()) {
+        return -1;
+      } else if (a._name.toLowerCase() > b._name.toLowerCase()) {
+        return 1;
+      }
+      return 0;
+    });
+  } else if (sortTodo.value === "Numerical") {
+    taskList.sort((a, b) => {
+      if (a._date < b._date) {
+        return -1;
+      } else if (a._date > b._date) {
+        return 1;
+      }
+      return 0;
+    });
   }
-  return 0;
-});
+  populateTasks(taskList);
+};
 
-// sort task list numerically
-// taskList.sort((a, b) => {
-//   if (a._date < b._date) {
-//     return -1;
-//   } else if (a._date > b._date) {
-//     return 1;
-//   }
-//   return 0;
-// });
-
+const sortTodo = document.querySelector(".sortTodo");
+sortTodo.onchange = sortTaskList;
 
 // add task to list
 const populateTasks = (taskArray) => {
   let taskDisplay = document.querySelector("#task-display");
-
+  taskDisplay.innerHTML = "";
   taskArray.forEach((task) => {
     taskDisplay.innerHTML += `
         <div class="task-card todo" id="${task._id}">
@@ -127,14 +139,14 @@ const checkTask = (event) => {
 const editTask = (event) => {
   // removing old task from list and local storage
   console.log(event.target);
-  let tasks = Array.from(JSON.parse(localStorage.getItem(TodoAppKey)));
-  tasks.forEach((task) => {
+  taskList = Array.from(JSON.parse(localStorage.getItem(TodoAppKey)));
+  taskList.forEach((task) => {
     if (task.task === event.target.parentNode.children[1].value) {
       // delete task
-      tasks.splice(tasks.indexOf(task), 1);
+      taskList.splice(taskList.indexOf(task), 1);
     }
   });
-  localStorage.setItem(TodoAppKey, JSON.stringify(tasks));
+  localStorage.setItem(TodoAppKey, JSON.stringify(taskList));
   event.target.parentElement.remove();
   // bringing up modal for new task
   modal.style.display = "block";
@@ -143,14 +155,14 @@ const editTask = (event) => {
 // delete task
 const deleteTask = (event) => {
   console.log(event.target);
-  let tasks = Array.from(JSON.parse(localStorage.getItem(TodoAppKey)));
-  tasks.forEach((task) => {
+  let taskList = Array.from(JSON.parse(localStorage.getItem(TodoAppKey)));
+  taskList.forEach((task) => {
     if (task.task === event.target.parentNode.children[1].value) {
       // delete task
-      tasks.splice(tasks.indexOf(task), 1);
+      taskList.splice(taskList.indexOf(task), 1);
     }
   });
-  localStorage.setItem(TodoAppKey, JSON.stringify(tasks));
+  localStorage.setItem(TodoAppKey, JSON.stringify(taskList));
   event.target.parentElement.remove();
 };
 
