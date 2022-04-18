@@ -61,14 +61,14 @@ if (!localStorage.getItem(TodoAppKey)) {
 }
 
 // sort task list alphabetically
-taskList.sort((a, b) => {
-  if (a._name.toLowerCase() < b._name.toLowerCase()) {
-    return -1;
-  } else if (a._name.toLowerCase() > b._name.toLowerCase()) {
-    return 1;
-  }
-  return 0;
-});
+// taskList.sort((a, b) => {
+//   if (a._name.toLowerCase() < b._name.toLowerCase()) {
+//     return -1;
+//   } else if (a._name.toLowerCase() > b._name.toLowerCase()) {
+//     return 1;
+//   }
+//   return 0;
+// });
 
 // sort task list numerically
 // taskList.sort((a, b) => {
@@ -121,20 +121,22 @@ const create = () => {
 // check task off
 const checkTask = (event) => {
   console.log(event.target);
+  let checkTask = Array.from(JSON.parse(localStorage.getItem(TodoAppKey)));
+  checkTask.toggle("completedItem");
 };
 
 // edit existing task
 const editTask = (event) => {
   // removing old task from list and local storage
   console.log(event.target);
-  let tasks = Array.from(JSON.parse(localStorage.getItem(TodoAppKey)));
-  tasks.forEach((task) => {
+  let editTask = Array.from(JSON.parse(localStorage.getItem(TodoAppKey)));
+  editTask.forEach((task) => {
     if (task.task === event.target.parentNode.children[1].value) {
       // delete task
-      tasks.splice(tasks.indexOf(task), 1);
+      editTask.splice(editTask.indexOf(task), 1);
     }
   });
-  localStorage.setItem(TodoAppKey, JSON.stringify(tasks));
+  localStorage.setItem(TodoAppKey, JSON.stringify(editTask));
   event.target.parentElement.remove();
   // bringing up modal for new task
   modal.style.display = "block";
@@ -143,14 +145,14 @@ const editTask = (event) => {
 // delete task
 const deleteTask = (event) => {
   console.log(event.target);
-  let tasks = Array.from(JSON.parse(localStorage.getItem(TodoAppKey)));
-  tasks.forEach((task) => {
+  let deleteTask = Array.from(JSON.parse(localStorage.getItem(TodoAppKey)));
+  deleteTask.forEach((task) => {
     if (task.task === event.target.parentNode.children[1].value) {
       // delete task
-      tasks.splice(tasks.indexOf(task), 1);
+      deleteTask.splice(deleteTask.indexOf(task), 1);
     }
   });
-  localStorage.setItem(TodoAppKey, JSON.stringify(tasks));
+  localStorage.setItem(TodoAppKey, JSON.stringify(deleteTask));
   event.target.parentElement.remove();
 };
 
