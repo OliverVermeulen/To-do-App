@@ -121,8 +121,6 @@ const create = () => {
 // check task off
 const checkTask = (event) => {
   console.log(event.target);
-  let checkTask = Array.from(JSON.parse(localStorage.getItem(TodoAppKey)));
-  checkTask.toggle("completedItem");
 };
 
 // edit existing task
